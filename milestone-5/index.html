@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Builder by Ali Bariz</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h2 class="Logo">Ali B.</h2>
+        <nav class="navigation">
+        <a href="#">My Resume</a>
+        <a href="#">My Projects</a>
+        <a href="#">Contact</a>
+        <button class="btnLogin-popup">Create Resume</button>
+    </nav>    
+</header>
+
+<br>
+
+  <div class="container">
+    <h1>Milestone 4: Editable Resume Builder by Ali Bariz</h1>
+
+    <!-- Resume Form -->
+    <div id="resume-form" class="card">
+      <h2>Personal Information</h2>
+      <form id="form">
+        <span><box-icon name='id-card'></box-icon></span>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+
+        <span><box-icon name='envelope'></box-icon></span>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+        <span><box-icon name='phone'></box-icon></span>
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+
+        <span><box-icon name='home'></box-icon></span>
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" placeholder="Your Address" required>
+
+        <span><box-icon name='book'></box-icon></span>
+        <label for="education">Education:</label>
+        <input type="edu" id="education" name="education" placeholder="Describe your education" required></textarea>
+
+        <span><box-icon name='badge-check'></box-icon></span>
+        <label for="experience">Experience:</label>
+        <input type="exp" id="experience" name="experience" placeholder="Describe your work experience" required></textarea>
+
+        <span><box-icon name='brain'></box-icon></span>
+        <label for="skills">Skills:</label>
+        <input type="text" id="skills" name="skills" placeholder="List your skills separated by commas" required>
+
+        <button type="button" onclick="generateResume()">Generate Resume</button>
+        <p id="error-message" style="color: red; display: none;">Please fill in all fields before generating the resume.</p>
+      </form>
+    </div>
+
+    <!-- Resume Preview -->
+    <div id="resume-preview" class="card" style="display: none;">
+      <h2>Resume Preview</h2>
+      <div id="preview-content">
+        <h1 id="preview-name">Your Name</h1>
+        <p id="preview-email">Your Email</p>
+        <p id="preview-phone">Your Phone Number</p>
+        <p id="preview-address">Your Address</p>
+
+        <section>
+          <h3>Education</h3>
+          <p id="preview-education">Your Education</p>
+        </section>
+
+        <section>
+          <h3>Experience</h3>
+          <p id="preview-experience">Your Experience</p>
+        </section>
+
+        <section>
+          <h3>Skills</h3>
+          <p id="preview-skills">Your Skills</p>
+        </section>
+      </div>
+
+      <button onclick="editResume()">Edit Resume</button>
+      <button onclick="exportPDF()">Download as PDF</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+</body>
+</html>
